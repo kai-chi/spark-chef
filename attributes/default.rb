@@ -6,13 +6,13 @@ include_attribute "hive2"
 default['hadoop_spark']['user']                                 = node['install']['user'].empty? ? "spark" : node['install']['user']
 default['hadoop_spark']['group']                                = node['install']['user'].empty? ? node['hops']['group'] : node['install']['user']
 
-default['hadoop_spark']['version']                              = "2.4.3.0"
+default['hadoop_spark']['version']                              = "2.4.4.0"
 default['scala']['version'] 	                                = "2.11"
 default['hadoop_spark']['dir']                                  = node['install']['dir'].empty? ? "/srv/hops" : node['install']['dir']
 default['hadoop_spark']['base_dir']                             = "#{node['hadoop_spark']['dir']}/spark"
 default['hadoop_spark']['home']                                 = "#{node['hadoop_spark']['dir']}/spark-#{node['hadoop_spark']['version']}-bin-without-hadoop-with-hive-with-r"
 default['hadoop_spark']['conf_dir']                             = "#{node['hadoop_spark']['base_dir']}/conf"
-default['hadoop_spark']['url']                                  = "#{node['download_url']}/spark-#{node['hadoop_spark']['version']}-bin-without-hadoop-with-hive-with-r.tgz"
+default['hadoop_spark']['url']                                  = "http://snurran.sics.se/hops/spark-2.4.4.0-bin-without-hadoop-with-hive-with-r.tgz"
 
 default['hadoop_spark']['spark_sql_dependencies_url']           = "#{node['download_url']}/spark-sql-dependencies"
 default['hadoop_spark']['parquet_version']                      = "1.10.0"
